@@ -1,7 +1,7 @@
 # Boilerplate for starting a web app with django
 
 ## Tech Stack
-![Static Badge](https://img.shields.io/badge/TAILWIND-CSS-blue)
+![Static Badge](https://img.shields.io/badge/TAILWIND-CSS-%2306B6D4?style=flat&logo=tailwindcss)
 
 
 ## Development
