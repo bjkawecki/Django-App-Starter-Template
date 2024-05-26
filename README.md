@@ -1,5 +1,9 @@
 # Boilerplate for starting a web app with django
 
+## Tech Stack
+![Static Badge](https://img.shields.io/badge/TAILWIND-CSS-blue)
+
+
 ## Development
 - Lint
 - Makefile
