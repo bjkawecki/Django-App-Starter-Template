@@ -1,0 +1,83 @@
+{% extends "components/main.html" %}
+{% block title %}
+    E-Mail-Adresse ändern – {{ app_name }}
+{% endblock title %}
+{% block content %}
+    <div class="md:basis-9/12 basis-full rounded h-fit px-4">
+        {% include "partials/back_to_start.html" %}
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center rtl:space-x-reverse">
+                <li aria-current="page">
+                    <a href="{% url 'settings' %}">
+                        <span class="font-semibold">Einstellungen</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        {% include "icons/menu-right.html" %}
+                        <span class="font-semibold">E-Mail-Adresse ändern</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+        <div class="mt-5">
+            {% if new_emailaddress %}
+                <div class="px-6 p-3 rounded">
+                    <p>
+                        Zur Bestätigung Ihrer neuen E-Mail-Adresse "{{ new_emailaddress.email }}" klicken Sie auf den Link in Ihrem E-Mail-Postfach.
+                    </p>
+                </div>
+                <form method="post" action="{% url 'account_email' %}">
+                    {% csrf_token %}
+                    <div class="space-y-2  mt-2">
+                        <input type="hidden"
+                               name="email"
+                               value="{{ new_emailaddress.email }}"
+                               class="text-sm rounded  block w-full p-2.5 border border-black placeholder-gray-600">
+                        <button type="submit"
+                                name="action_send"
+                                class=" focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 hover:border-gray-600 focus:ring-gray-600 border border-black">
+                            Link erneut versenden
+                        </button>
+                        <button type="submit"
+                                name="action_remove"
+                                class=" focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 hover:border-gray-600 focus:ring-gray-600 border border-black">
+                            Verifizierung abbrechen
+                        </button>
+                    </div>
+                </form>
+            {% else %}
+                <form method="post"
+                      action="{% url 'account_email' %}"
+                      value="{{ current_emailaddress.email }}">
+                    {% csrf_token %}
+                    <div class=" px-6 py-5 rounded">
+                        <div class="space-y-2 ">
+                            <label for="id_email" class="block mb-2 text-sm font-semibold ">E-Mail-Adresse:</label>
+                            <input type="email"
+                                   class=" border border-black   text-sm rounded block w-full p-2.5  placeholder-gray-600 "
+                                   name="email"
+                                   value="{{ current_emailaddress.email }}"
+                                   maxlength="320"
+                                   required=""
+                                   id="id_email">
+                        </div>
+                    </div>
+                    <div class="space-y-2  mt-2">
+                        <a href="{% url 'settings' %}">
+                            <button type="button"
+                                    class=" focus:outline-none focus:ring-4  font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 focus:ring-gray-600 border border-black">
+                                Abbrechen
+                            </button>
+                        </a>
+                        <button type="submit"
+                                name="action_add"
+                                class="   focus:ring-4  font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 focus:outline-none border border-black">
+                            Bestätigen
+                        </button>
+                    </div>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

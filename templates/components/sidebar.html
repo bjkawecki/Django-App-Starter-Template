@@ -1,0 +1,40 @@
+<aside class="basis-3/12 pr-8 md:translate-x-0 hidden md:block h-[calc(90vh)] z-40 transition-transform -translate-x-full sticky top-0 border border-black"
+       aria-label="Sidenav">
+    <div class="h-full flex flex-col justify-between">
+        <div>
+            {% with request.resolver_match.url_name as url_name %}
+                <ul class="w-full">
+                    <li>
+                        <a href="{% url 'home' %}"
+                           class="{% if 'start' in request.path %}font-semibold{% endif %} flex items-center py-1.5 px-5 rounded">
+                            <span class="w-5">{% include "icons/view-dashboard.html" %}</span>
+                            <span class="flex-1 ml-2 whitespace-nowrap">Start</span>
+                        </a>
+                    </li>
+                </ul>
+            {% endwith %}
+        </div>
+        <div>
+            <button id="dropdownTopSideButton"
+                    data-dropdown-toggle="dropdownTopSide"
+                    data-dropdown-placement="top"
+                    class="focus:ring-2 focus:outline-noney focus:ring-gray-900 flex justify-evenly w-full font-normal items-center p-2 rounded transition duration-75 border border-black"
+                    type="button">
+                <span>{{ user.get_username }}</span>
+                <span class="h-5 w-5">{% include "icons/dots-horizontal.html" %}</span>
+            </button>
+            <div id="dropdownTopSide"
+                 class="z-10 hidden divide-y divide-gray-800 w-11/12 rounded">
+                <ul class="w-full">
+                    <li class="border border-black">
+                        <a href="{% url 'logout' %}"
+                           class="font-normal flex items-center  py-1.5 px-5  rounded">
+                            <span class="w-5">{% include "icons/logout.html" %}</span>
+                            <span class="ml-2">Abmelden</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

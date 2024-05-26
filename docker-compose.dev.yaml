@@ -1,0 +1,86 @@
+services:
+
+  web:
+    container_name: django_starter_web
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: poetry run python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
+    depends_on:
+      redis:
+        condition: service_started
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+
+  db:
+    container_name: django_starter_db
+    image: postgres:15.4-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d django_starter_db_dev -U postgres"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgresql-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=django_starter_db_dev
+
+
+  redis:
+    container_name: django_starter_redis
+    image: redis:7.2.3-alpine3.18
+    env_file:
+      - .env
+
+  celery_worker:
+    container_name: django_starter_celery_worker
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: celery -A config.celery worker -l INFO
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      web:
+        condition: service_started
+      redis:
+        condition: service_started
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+
+
+  celery_beat:
+    container_name: django_starter_celery_beat
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: celery -A config.celery beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      web:
+        condition: service_started
+      redis:
+        condition: service_started
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+
+volumes:
+  postgresql-db:
+    driver: local

@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+{% block content %}
+    <div class="col-lg-4 col-md-6 col-sm-8 border border-black">
+        <div class="card mb-2">
+            <div class="card-body">
+                <p class="card-text">
+                    <form action="{% url 'signin' %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">E-Mail-Adresse</label>
+                            <input type="email"
+                                   class="form-control"
+                                   name="username"
+                                   aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Passwort</label>
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                        <button class="btn dark-button border border-black" type="submit">Anmelden</button>
+                    </form>
+                </p>
+                <p class="card-text">
+                    Noch kein Konto? <a href="{% url 'signup' %}">Hier registrieren</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

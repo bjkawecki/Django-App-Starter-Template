@@ -1,0 +1,10 @@
+{% extends "_base-landing.html" %}
+{% block title %}
+    {{ app_name }}
+{% endblock title %}
+{% block main %}
+    {% include "components/login.html" %}
+    <section id="messages">
+        {% include "partials/toast.html" %}
+    </section>
+{% endblock main %}

@@ -1,0 +1,10 @@
+{% extends "_base-landing.html" %}
+{% block title %}
+    Registrieren – {{ app_name }}
+{% endblock title %}
+{% block main %}
+    {% include "components/signup.html" %}
+    <section id="messages">
+        {% include "partials/toast.html" %}
+    </section>
+{% endblock main %}

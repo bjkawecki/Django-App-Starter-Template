@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}Bestätigungs-E-Mail gesendet an {{email}}.{% endblocktrans %}

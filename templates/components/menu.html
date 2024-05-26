@@ -1,0 +1,23 @@
+<div class="col-lg-3 col-md-3 col-sm-4">
+    <div class="card mb-3 py-2 px-3 border-0 rounded-1">
+        <h1>
+            <a class="fw-bold text-decoration-none dark" href="{% url 'home' %}">{{ app_name }}</a>
+        </h1>
+    </div>
+    <div class="card py-2 px-3 border-0 rounded-1">
+        <div class="small text-secondary">Lernen</div>
+        <ul class="fs-6">
+            <li>
+                <a href="{% url 'home' %}" class="dark text-decoration-none"><i class="fa-solid fa-house"></i> Start</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card py-2 px-3 border-0 rounded-1">
+        <div class="small text-secondary">Profil</div>
+        <ul class="fs-6">
+            <li>
+                <a href="{% url 'logout' %}" class="dark text-decoration-none"><i class="fa-solid fa-person-through-window"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>

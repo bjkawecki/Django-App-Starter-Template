@@ -1,0 +1,7 @@
+{% extends "account/email/base_message.txt" %}
+{% load account %}
+{% load i18n %}
+{% block content %}{% autoescape off %}{% user_display user as user_display %}
+Sie erhalten diese Nachricht, weil Ihre E-Mail-Adresse "{{ user_display }}" genutzt wurde, um ein Nutzerkonto bei {{ app_name }} anzulegen, dem Russisch-Vokabeltrainer im Netz.
+Um Ihr Konto zu aktivieren, klicken Sie bitte auf den folgenden Link: {{ activate_url }}.
+Falls Sie kein Konto anlegen wollten, können Sie diese Nachricht einfach ignorieren.{% endautoescape %}{% endblock content %}

@@ -1,0 +1,64 @@
+{% load static %}
+<aside class="fixed top-0 left-0 z-40 h-full transition-transform -translate-x-full text-white"
+       aria-label="Sidenav"
+       id="drawer-navigation">
+    <div class="flex justify-start items-center py-2.5 px-2">
+        {% if user.is_authenticated %}
+            <button data-drawer-target="drawer-navigation"
+                    data-drawer-toggle="drawer-navigation"
+                    aria-controls="drawer-navigation"
+                    class="px-2 mr-2 rounded cursor-pointer md:hidden focus:ring-2 focus:ring-gray-700 border border-white ">
+                {% include "icons/menu.html" %}
+                <span class="sr-only">Toggle sidebar</span>
+            </button>
+        {% endif %}
+        <a href="{% url 'home' %}"
+           class="flex items-center justify-between mr-4">
+            <img src="{% static 'images/logo.svg' %}"
+                 class="mr-2 p-1"
+                 alt="Logo"
+                 height="50"
+                 width="50" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap">{{ app_name }}</span>
+        </a>
+    </div>
+    <div class="flex flex-col py-5 px-2 h-full">
+        <div class="w-44 basis-3/4">
+            {% with request.resolver_match.url_name as url_name %}
+                <ul class="w-full">
+                    <li>
+                        <a href="{% url 'home' %}"
+                           class="{% if 'start' in request.path %}font-semibold{% endif %} flex items-center py-1 px-2 rounded">
+                            {% include "icons/view-dashboard.html" %}
+                            <span class="flex-1 ml-2 whitespace-nowrap">Start</span>
+                        </a>
+                    </li>
+                </ul>
+            {% endwith %}
+        </div>
+        {% if user.is_authenticated %}
+            <div class="w-full md:mb-0 mb-10">
+                <button id="dropdownTopSideSmButton"
+                        data-dropdown-toggle="dropdownTopSideSm"
+                        data-dropdown-placement="top"
+                        class="text-sm focus:ring-2 focus:outline-noney focus:ring-gray-900 flex justify-around w-full font-semibold  items-center py-2 mb-2 rounded transition duration-75 group border border-white"
+                        type="button">
+                    <span class="pr-2">{{ user.get_username }}</span>
+                    <span class="h-5 w-5">{% include "icons/dots-horizontal.html" %}</span>
+                </button>
+                <div id="dropdownTopSideSm"
+                     class="z-10 hidden divide-y divide-gray-800 rounded w-44">
+                    <ul class="w-full">
+                        <li class="border border-white">
+                            <a href="{% url 'logout' %}"
+                               class="font-normal  flex items-center py-1 px-1.5 rounded hover">
+                                {% include "icons/logout.html" %}
+                                <span class="ml-2">Abmelden</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</aside>

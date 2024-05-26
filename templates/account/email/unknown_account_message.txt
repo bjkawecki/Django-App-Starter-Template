@@ -1,0 +1,9 @@
+{% extends "account/email/base_message.txt" %}
+
+{% block content %}Sie erhalten diese E-Mail, weil Sie oder jemand anderes versucht hat, auf ein Konto mit der E-Mail-Adresse {{ email }} zuzugreifen. Allerdings haben wir keine Einträge für ein solches Konto in unserer Datenbank.
+
+Diese E-Mail kann bedenkenlos ignoriert werden, wenn Sie diese Anfrage nicht veranlasst haben.
+
+Wenn Sie das waren, können Sie sich über den unten stehenden Link für ein Konto registrieren.
+
+{{ signup_url }}{% endblock content %}
