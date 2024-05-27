@@ -16,7 +16,7 @@ This is some boilerplate code, that I pieced together for my latest Django proje
 
 Alongside a predefined development setup, you will find some helpful features to  get you started quickly for creating your next Django web application.
 
-## Prerequisties
+## Prerequisites
 
 - Python 3.12
 - PostgreSQL 16.2
@@ -69,16 +69,30 @@ For your django-templates files you can use djlint with `djlint . --reformat`
 
 ## How to get started
 
-Build the docker containers with `docker-compose -f docker-compose.dev.yaml build`.
+Build the docker containers with:
 
-Install the node modules with `npm install`
+```docker-compose -f docker-compose.dev.yaml build```
 
-Install the python packages with `poetry install`
+Install the node modules with:
 
-Start the docker containers in the background with `docker-compose -f docker-compose.dev.yaml up`
+```npm install```
 
-Update your Tailwind css file with `npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch`.
+Install the python packages with:
 
-See your developtment server at `http://0.0.0.0:8000/`.
+```poetry install```
 
-You can hook into the django container with `docker exec -it django_starter_web bash`.
+Start the docker containers in the background with:
+
+```docker-compose -f docker-compose.dev.yaml up```
+
+Update your Tailwind css file with:
+
+```npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch```
+
+See your developtment server at:
+
+```http://0.0.0.0:8000/```
+
+You can hook into the django container with:
+
+```docker exec -it django_starter_web bash```
