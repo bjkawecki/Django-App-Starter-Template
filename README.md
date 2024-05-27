@@ -12,7 +12,7 @@
 ![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=for-the-badge&logo=materialdesignicons&logoColor=white)
 
 
-Boilerplate code, that I pieced together for my latest Django project.
+This is some boilerplate code, that I pieced together for my latest Django project.
 
 Alongside a predefined development setup, you will find some helpful features to  get you started quickly for creating your next Django web application.
 
