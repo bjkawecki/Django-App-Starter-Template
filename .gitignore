@@ -18,3 +18,4 @@ logs
 output.css
 create-db.sql
 db
+package-lock.json
