@@ -31,8 +31,8 @@ COPY ./tailwind.config.js .
 
 RUN poetry config virtualenvs.create false && poetry install --no-root
 RUN mkdir ./logs
-RUN touch normal_handler.log
-RUN touch detailed_handler.log
+RUN touch ./logs/normal_handler.log
+RUN touch ./logs/detailed_handler.log
 RUN chmod +x /usr/src/app/entrypoint.sh
 RUN npm init -y
 RUN npm install tailwindcss postcss-cli autoprefixer flowbite
