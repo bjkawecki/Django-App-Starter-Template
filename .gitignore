@@ -18,3 +18,5 @@ poetry.lock
 settings.json
 logs
 output.css
+create-db.sql
+db

@@ -13,7 +13,7 @@ services:
       - 8000:8000
     depends_on:
       redis:
-        condition: service_started
+        condition: service_healthy
       db:
         condition: service_healthy
     env_file:
@@ -23,7 +23,7 @@ services:
     container_name: django_starter_db
     image: postgres:15.4-alpine
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -d django_starter_db_dev -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 1s
       timeout: 3s
       retries: 5
@@ -33,18 +33,21 @@ services:
     volumes:
       - postgresql-db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=django_starter_db_dev
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=django_starter_database
 
 
   redis:
     container_name: django_starter_redis
     image: redis:7.2.3-alpine3.18
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
     env_file:
       - .env
 
   celery_worker:
+    restart: unless-stopped
     container_name: django_starter_celery_worker
     build:
       context: .
@@ -56,7 +59,7 @@ services:
       web:
         condition: service_started
       redis:
-        condition: service_started
+        condition: service_healthy
       db:
         condition: service_healthy
     env_file:
@@ -65,6 +68,7 @@ services:
 
   celery_beat:
     container_name: django_starter_celery_beat
+    restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -75,7 +79,7 @@ services:
       web:
         condition: service_started
       redis:
-        condition: service_started
+        condition: service_healthy
       db:
         condition: service_healthy
     env_file:

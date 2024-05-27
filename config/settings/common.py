@@ -12,7 +12,6 @@ SECRET_KEY = get_env_variable("SECRET_KEY")
 
 ALLOWED_HOSTS = get_env_variable("ALLOWED_HOSTS").split(",")
 
-
 RUN_SERVER_PORT = 8000
 
 DEBUG = get_env_variable("DEBUG", False).lower() == "true"

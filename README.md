@@ -12,8 +12,18 @@
 ![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=for-the-badge&logo=materialdesignicons&logoColor=white)
 
 
+Boilerplate code, that I pieced together for my latest Django project.
 
-Boilerplate code to get you quickly started for the development of a Django web application.
+Alongside a predefined development setup, you will find some helpful features to  get you started quickly for creating your next Django web application.
+
+## Prerequisties
+
+- Python 3.12
+- PostgreSQL 16.2
+- Docker 26.1
+- Docker Compose 2.27
+
+Make sure, that you have a
 
 ## Features
 
