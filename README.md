@@ -73,7 +73,11 @@ Build the docker containers with `docker-compose -f docker-compose.dev.yaml buil
 
 Install the node modules with `npm install`
 
-Start the docker containers in the background with `docker-compose -f docker-compose.dev.yaml -d`
+Install the python packages with `poetry install`
+
+Start the docker containers in the background with `docker-compose -f docker-compose.dev.yaml up`
+
+Update your Tailwind css file with `npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch`.
 
 See your developtment server at `http://0.0.0.0:8000/`.
 
