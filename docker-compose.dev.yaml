@@ -55,13 +55,13 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     command: celery -A config.celery worker -l INFO
-    volumes:
-      - .:/usr/src/app
+    # volumes:
+    #   - .:/usr/src/app
     depends_on:
       web:
         condition: service_started
       redis:
-        condition: service_healthy
+        condition: service_started
       db:
         condition: service_healthy
     env_file:
@@ -81,7 +81,7 @@ services:
       web:
         condition: service_started
       redis:
-        condition: service_healthy
+        condition: service_started
       db:
         condition: service_healthy
     env_file:
