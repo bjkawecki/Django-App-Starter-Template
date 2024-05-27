@@ -31,8 +31,6 @@ COPY ./Makefile .
 COPY ./manage.py .
 COPY ./tailwind.config.js .
 COPY ./logs ./logs
-COPY ./package.json .
+COPY package.json package-lock.json* ./
 
-RUN chmod +x /usr/src/app/entrypoint.sh
-RUN npm install
 # ENTRYPOINT ["bash", "-e", "/usr/src/app/entrypoint.sh"]

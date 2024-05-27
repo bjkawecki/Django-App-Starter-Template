@@ -12,7 +12,6 @@ staticfiles
 docker-compose.prod.yaml
 Dockerfile
 entrypoint.prod.sh
-package-lock.json
 poetry.lock
 settings.json
 logs
