@@ -30,10 +30,10 @@ Alongside a predefined development setup, you will find some helpful features to
 - Allauth
 - Custom User Model
 - Split settings
-- context_processor
+- Context processor for global variables
 - Logger
-- Poetry
-- variables in .env.dev file (do not store your secrets in a public repository)
+- Poetry with development dependencies in extra group
+- Environment variables for secure configuration
 
 ### Client
 - Tailwind CSS with Flowbite
@@ -52,6 +52,8 @@ For example `poetry run python manage.py makemigrations` becomes `make mm`.
 Start your docker containers with `docker-compose -f docker-compose.dev.yaml up --build`.
 
 Hook into your django container with `docker exec -it django_starter_web bash`.
+
+See your developtment server `http://0.0.0.0:8000/`
 
 ### Lint
 You can lint your files with pre-commit `poetry run pre-commit run --all-files`.

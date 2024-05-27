@@ -34,5 +34,4 @@ RUN poetry config virtualenvs.create false && poetry install --no-root
 RUN chmod +x /usr/src/app/entrypoint.sh
 RUN npm init -y
 RUN npm install tailwindcss postcss-cli autoprefixer flowbite
-RUN npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css
 ENTRYPOINT ["bash", "-e", "/usr/src/app/entrypoint.sh"]
