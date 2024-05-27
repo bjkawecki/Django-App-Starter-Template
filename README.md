@@ -1,14 +1,14 @@
 # A starter for your next Django web app
 
 
-![Static Badge](https://img.shields.io/badge/Django-%23092E20?style=flat&logo=django&logoColor=%23092E20&labelColor=white)
-![Static Badge](https://img.shields.io/badge/Docker-%232496ED?style=flat&logo=docker&logoColor=%232496ED&labelColor=white)
-![Static Badge](https://img.shields.io/badge/Poetry-%2360A5FA?style=flat&logo=poetry&logoColor=%2360A5FA&labelColor=white)
-![Static Badge](https://img.shields.io/badge/Htmx-%233366CC?style=flat&logo=htmx&logoColor=%233366CC&labelColor=white)
-![Static Badge](https://img.shields.io/badge/Tailwind-%2306B6D4?style=flat&logo=tailwindcss&logoColor=%2306B6D4&labelColor=white)
-![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=flat&logo=materialdesignicons&logoColor=%232196F3&labelColor=white)
-![Static Badge](https://img.shields.io/badge/Celery-%2337814A?style=flat&logo=celery&logoColor=%2337814A&labelColor=white)
-![Static Badge](https://img.shields.io/badge/Redis-%23DC382D?style=flat&logo=redis&logoColor=%23DC382D&labelColor=white)
+![Static Badge](https://img.shields.io/badge/Django-%23092E20?style=flat-square&logo=django&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Docker-%232496ED?style=flat-square&logo=docker&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Poetry-%2360A5FA?style=flat-square&logo=poetry&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Htmx-%233366CC?style=flat-square&logo=htmx&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Tailwind-%2306B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=flat-square&logo=materialdesignicons&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Celery-%2337814A?style=flat-square&logo=celery&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Redis-%23DC382D?style=flat-square&logo=redis&logoColor=white)
 
 
 Boilerplate code to get you quickly started for the development of a Django web application.
