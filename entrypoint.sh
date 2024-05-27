@@ -11,7 +11,4 @@ RUN_MANAGE_PY="python manage.py"
 $RUN_MANAGE_PY migrate --fake-initial
 $RUN_MANAGE_PY migrate
 
-npm init -y
-npm install tailwindcss postcss-cli autoprefixer
-
 exec "$@"
