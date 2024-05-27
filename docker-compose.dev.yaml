@@ -17,7 +17,7 @@ services:
       db:
         condition: service_healthy
     env_file:
-      - .env
+      - .env.dev
 
   db:
     container_name: django_starter_db
@@ -44,7 +44,7 @@ services:
     healthcheck:
       test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
     env_file:
-      - .env
+      - .env.dev
 
   celery_worker:
     restart: unless-stopped
@@ -63,7 +63,7 @@ services:
       db:
         condition: service_healthy
     env_file:
-      - .env
+      - .env.dev
 
 
   celery_beat:
@@ -83,7 +83,7 @@ services:
       db:
         condition: service_healthy
     env_file:
-      - .env
+      - .env.dev
 
 volumes:
   postgresql-db:

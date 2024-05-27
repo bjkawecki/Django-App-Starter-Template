@@ -33,7 +33,7 @@ Alongside a predefined development setup, you will find some helpful features to
 - context_processor
 - Logger
 - Poetry
-- variables in .env file
+- variables in .env.dev file (do not store your secrets in a public repository)
 
 ### Client
 - Tailwind CSS with Flowbite
