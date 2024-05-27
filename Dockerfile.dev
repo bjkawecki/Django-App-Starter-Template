@@ -34,7 +34,5 @@ COPY ./logs ./logs
 COPY ./package.json .
 
 RUN chmod +x /usr/src/app/entrypoint.sh
-
-RUN npm init -y
-RUN npm install tailwindcss postcss-cli autoprefixer flowbite
+RUN npm install
 # ENTRYPOINT ["bash", "-e", "/usr/src/app/entrypoint.sh"]
