@@ -47,14 +47,6 @@ Use the `Makefile` to shorten common and often used comands.
 
 For example `poetry run python manage.py makemigrations` becomes `make mm`.
 
-### Docker
-
-Start your docker containers with `docker-compose -f docker-compose.dev.yaml up --build`.
-
-Hook into your django container with `docker exec -it django_starter_web bash`.
-
-See your developtment server `http://0.0.0.0:8000/`
-
 ### Lint
 You can lint your files with pre-commit `poetry run pre-commit run --all-files`.
 First time will install the hooks from .pre-compose-config.yaml.
@@ -73,3 +65,16 @@ and activate it by
 In the first run, pre-commit will update your projects files according to your configuration.
 
 For your django-templates files you can use djlint with `djlint . --reformat`
+
+
+## How to get started
+
+Build the docker containers with `docker-compose -f docker-compose.dev.yaml build`.
+
+Install the node modules with `npm install`
+
+Start the docker containers in the background with `docker-compose -f docker-compose.dev.yaml -d`
+
+See your developtment server at `http://0.0.0.0:8000/`.
+
+You can hook into the django container with `docker exec -it django_starter_web bash`.
