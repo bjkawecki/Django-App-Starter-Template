@@ -1,11 +1,11 @@
 # Boilerplate for starting a web app with django
 
 ## Tech Stack
-![Static Badge](https://img.shields.io/badge/FRAMEWORK-DJANGO-%23092E20?style=flat&logo=django)
-![Static Badge](https://img.shields.io/badge/CSS-TAILWIND-%2306B6D4?style=flat&logo=tailwindcss)
-![Static Badge](https://img.shields.io/badge/JAVASCRIPT-HTMX-%233366CC?style=flat&logo=htmx)
-![Static Badge](https://img.shields.io/badge/DATABASE-POSTGRESQL-%234169E1?style=flat&logo=postgresql)
-![Static Badge](https://img.shields.io/badge/PLATFORM-DOCKER-%232496ED?style=flat&logo=docker)
+![Static Badge](https://img.shields.io/badge/DJANGO-%23092E20?style=flat&logo=django)
+![Static Badge](https://img.shields.io/badge/TAILWIND%23CSS-%2306B6D4?style=flat&logo=tailwindcss)
+![Static Badge](https://img.shields.io/badge/HTMX-%233366CC?style=flat&logo=htmx)
+![Static Badge](https://img.shields.io/badge/POSTGRESQL-%234169E1?style=flat&logo=postgresql)
+![Static Badge](https://img.shields.io/badge/DOCKER-%232496ED?style=flat&logo=docker)
 
 
 ## Development
