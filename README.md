@@ -81,16 +81,10 @@ Install the node modules with:
 $ npm install
 ```
 
-Install the python packages with:
-
-```
-$ poetry install
-```
-
 Start the docker containers in the background with:
 
 ```
-$ docker-compose -f docker-compose.dev.yaml up
+$ docker-compose -f docker-compose.dev.yaml up -d
 ```
 
 Update your Tailwind css file with:
