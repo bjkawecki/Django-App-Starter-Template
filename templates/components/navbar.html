@@ -12,7 +12,11 @@
         {% endif %}
         <a href="{% url 'home' %}"
            class="flex items-center justify-between ml-1 py-1">
-            <img src="{% static 'images/logo.svg' %}" class="mx-2 " alt="Logo" height="30" width="30" />
+            <img src="{% static 'images/logo.svg' %}"
+                 class="mx-2 "
+                 alt="Logo"
+                 height="30"
+                 width="30" />
             <span class="self-center text-xl font-semibold whitespace-nowrap">{{ app_name }}</span>
         </a>
     </div>
