@@ -29,7 +29,7 @@ COPY ./Makefile .
 COPY ./manage.py .
 COPY ./tailwind.config.js .
 COPY ./logs ./logs
-COPY .package.json .
+COPY ./package.json .
 
 RUN poetry config virtualenvs.create false && poetry install --no-root
 RUN chmod +x /usr/src/app/entrypoint.sh
