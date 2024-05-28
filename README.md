@@ -69,31 +69,31 @@ For your django-templates files you can use djlint with `djlint . --reformat`
 
 ## How to get started
 
-Build the docker containers with:
+Build the docker containers:
 
 ```
 $ docker-compose -f docker-compose.dev.yaml build
 ```
 
-Install the node modules with:
+Install the node modules:
 
 ```
 $ npm install
 ```
 
-Start the docker containers in the background with:
+Start the docker containers in the background:
 
 ```
 $ docker-compose -f docker-compose.dev.yaml up -d
 ```
 
-Update your Tailwind css file with:
+Update your Tailwind css file:
 
 ```
 $ npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch
 ```
 
-See your developtment server at `http://0.0.0.0:8000/`. You can hook into the django container with:
+See your developtment server at `http://0.0.0.0:8000/`. You can hook into the django container:
 
 ```
 $ docker exec -it django_starter_web bash
