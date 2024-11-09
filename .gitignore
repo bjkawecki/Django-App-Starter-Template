@@ -1,16 +1,12 @@
 */__pycache__/*
 *.pyc
-.venv
 venv
 __pycache__
 node_modules
 static/CACHE
 .coverage
 staticfiles
-.vscode
-Dockerfile
 entrypoint.prod.sh
 poetry.lock
 settings.json
-logs
 package-lock.json
