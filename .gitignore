@@ -10,3 +10,4 @@ entrypoint.prod.sh
 poetry.lock
 settings.json
 package-lock.json
+output.css
