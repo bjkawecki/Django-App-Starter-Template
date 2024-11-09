@@ -96,8 +96,8 @@ $ npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch
 
 ### Linting
 
-You can lint your files with pre-commit `poetry run pre-commit run --all-files`.
-First time will install the hooks from .pre-compose-config.yaml.
+Lint your files with pre-commit `poetry run pre-commit run --all-files`.
+On the first run, it will install the hooks from .pre-compose-config.yaml.
 Shortcut in Makefile: `make lint`
 
 If you want to use `pre-commit` with `git`, create the virtual environment. On GNU/Linux you do this with
@@ -107,7 +107,3 @@ If you want to use `pre-commit` with `git`, create the virtual environment. On G
 and activate it with
 
 `source .venv/bin/activate`
-
-In the first run, pre-commit will update your projects files according to your configuration.
-
-For your django-templates files you can use djlint with `djlint . --reformat`
