@@ -16,7 +16,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=for-the-badge&logo=materialdesignicons&logoColor=white)
 
-This is some boilerplate code, that I pieced together for my latest Django project.
+This repository presents slimmed down boilerplate code from my latest Django project.
 
 Alongside a predefined development setup, you will find some helpful features to get you started quickly for creating your next Django web application.
 
@@ -52,7 +52,7 @@ Docker related files go to: **./docker**
 
 Project, but not app related files go to: **./project**
 
-App related files, e. g., code, go to: **./src**
+App related files, e. g., code go to: **./src**
 
 Consistent files, e. g., logs and static files go to: **./volume**
 
