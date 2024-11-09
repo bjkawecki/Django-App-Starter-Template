@@ -55,7 +55,7 @@ class CustomUserAdmin(UserAdmin):
             },
         ),
         (
-            "Einstellungen",
+            "Settings",
             {
                 "fields": (
                     "daily_proverb",

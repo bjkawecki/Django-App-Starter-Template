@@ -1,78 +1,78 @@
 {% extends "components/main.html" %}
 {% block title %}
-    Einstellungen – {{ app_name }}
+Settings – {{ app_name }}
 {% endblock title %}
 {% block content %}
-    <div class="md:basis-9/12 basis-full rounded px-4 overflow-y-auto md:pb-10 pb-28">
-        {% include "partials/back_to_start.html" %}
-        <div class="text-xl mb-2 font-bold">Einstellungen</div>
-        <div class="mt-5 ">
-            <div class="flex flex-col rounded p-3">
-                <div class="flex col-span-1 px-3 py-1">
-                    <div class="font-semibold text-lg">Konto</div>
-                </div>
-                <div class="col-span-4">
-                    <a href="{% url 'change_username' %}">
-                        <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
-                            <div class="flex flex-col">
-                                <div class="font-normal">Name</div>
-                                <div class="font-semibold">{{ user.get_full_name }}</div>
-                            </div>
-                            {% include "icons/menu-right.html" %}
-                        </div>
-                    </a>
-                    <a href="{% url 'change_email' %}">
-                        <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
-                            <div class="flex flex-col">
-                                <div class="font-normal">E-Mail-Adresse</div>
-                                <div class="font-semibold">{{ user.email }}</div>
-                            </div>
-                            {% include "icons/menu-right.html" %}
-                        </div>
-                    </a>
-                    <a href="{% url 'change_password' %}">
-                        <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
-                            <div class="flex flex-col">
-                                <div class="font-normal">Passwort</div>
-                                <div class="font-semibold">••••••••</div>
-                            </div>
-                            {% include "icons/menu-right.html" %}
-                        </div>
-                    </a>
-                    <a href="{% url 'subscription_settings' %}">
-                        <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
-                            <div class="flex flex-col">
-                                <div class="font-normal">Abonnement</div>
-                                <div class="font-semibold">
-                                    {% if subscription %}
-                                        {{ subscription.plan.product.name }}
-                                    {% else %}
-                                        Kein Abonnement
-                                    {% endif %}
-                                </div>
-                            </div>
-                            {% include "icons/menu-right.html" %}
-                        </div>
-                    </a>
-                    <div class="flex justify-between  px-3 py-1 rounded items-end mb-2">
-                        <div class="flex flex-col">
-                            <div class="font-normal">Registriert seit</div>
-                            <div class="font-semibold">{{ user.date_joined|date:"d. F Y" }}</div>
-                        </div>
-                        <a href="{% url 'delete_account' %}">
-                            <button type="button"
-                                    class="focus:outline-none focus:ring-4 text-sm font-semibold rounded px-3 py-1  bg-red-600 hover:bg-red-500 focus:ring-red-700 border border-black">
-                                Konto löschen
-                            </button>
-                        </a>
-                    </div>
-                </div>
+<div class="md:basis-9/12 basis-full rounded px-4 overflow-y-auto md:pb-10 pb-28">
+    {% include "partials/back_to_start.html" %}
+    <div class="text-xl mb-2 font-bold">Settings</div>
+    <div class="mt-5 ">
+        <div class="flex flex-col rounded p-3">
+            <div class="flex col-span-1 px-3 py-1">
+                <div class="font-semibold text-lg">Account</div>
             </div>
-            <div class="flex flex-col my-5 rounded p-3">
-                <div class="flex col-span-1 px-3 py-1">
-                    <div class="font-semibold text-lg">App</div>
+            <div class="col-span-4">
+                <a href="{% url 'change_username' %}">
+                    <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
+                        <div class="flex flex-col">
+                            <div class="font-normal">Name</div>
+                            <div class="font-semibold">{{ user.get_full_name }}</div>
+                        </div>
+                        {% include "icons/menu-right.html" %}
+                    </div>
+                </a>
+                <a href="{% url 'change_email' %}">
+                    <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
+                        <div class="flex flex-col">
+                            <div class="font-normal">E-mail adress</div>
+                            <div class="font-semibold">{{ user.email }}</div>
+                        </div>
+                        {% include "icons/menu-right.html" %}
+                    </div>
+                </a>
+                <a href="{% url 'change_password' %}">
+                    <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
+                        <div class="flex flex-col">
+                            <div class="font-normal">Password</div>
+                            <div class="font-semibold">••••••••</div>
+                        </div>
+                        {% include "icons/menu-right.html" %}
+                    </div>
+                </a>
+                <a href="{% url 'subscription_settings' %}">
+                    <div class="flex justify-between px-3 py-1 rounded items-center mb-2">
+                        <div class="flex flex-col">
+                            <div class="font-normal">Subscription</div>
+                            <div class="font-semibold">
+                                {% if subscription %}
+                                {{ subscription.plan.product.name }}
+                                {% else %}
+                                No subscription
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% include "icons/menu-right.html" %}
+                    </div>
+                </a>
+                <div class="flex justify-between  px-3 py-1 rounded items-end mb-2">
+                    <div class="flex flex-col">
+                        <div class="font-normal">Registered since</div>
+                        <div class="font-semibold">{{ user.date_joined|date:"d. F Y" }}</div>
+                    </div>
+                    <a href="{% url 'delete_account' %}">
+                        <button type="button"
+                            class="focus:outline-none focus:ring-4 text-sm font-semibold rounded px-3 py-1  bg-red-600 hover:bg-red-500 focus:ring-red-700 border border-black">
+                            Delete account
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
+        <div class="flex flex-col my-5 rounded p-3">
+            <div class="flex col-span-1 px-3 py-1">
+                <div class="font-semibold text-lg">App</div>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock content %}

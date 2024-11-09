@@ -1,66 +1,62 @@
 {% extends "components/main.html" %}
 {% block title %}
-    Konto löschen – {{ app_name }}
+Konto löschen – {{ app_name }}
 {% endblock title %}
 {% block content %}
-    <div class="md:basis-9/12 basis-full rounded h-fit px-4">
-        {% include "partials/back_to_start.html" %}
-        <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center rtl:space-x-reverse">
-                <li aria-current="page">
-                    <a href="{% url 'settings' %}">
-                        <span class="font-semibold">Einstellungen</span>
-                    </a>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        {% include "icons/menu-right.html" %}
-                        <span class="font-semibold">Konto löschen</span>
-                    </div>
-                </li>
-            </ol>
-        </nav>
-        <div class="mt-5">
-            <div class="rounded-t px-6 pt-5">
-                <div class="mb-1 font-semibold ">Sie sind im Begriff, Ihr Konto zu löschen. Das bedeutet:</div>
-                <ul class="space-y-1 pl-3 list-disc list-inside">
-                    <li>Sie werden ausgeloggt.</li>
-                    <li>Ihr Konto wird deaktiviert.</li>
-                    <li>Nach 3 Tagen wird Ihr Konto endgültig gelöscht.</li>
-                </ul>
-            </div>
-            <form method="post" action="{% url 'delete_account' %}" class="space-y-4">
-                <div class="rounded-b px-6 pb-5 pt-3">
-                    {% csrf_token %}
-                    <label class="block mb-2 text-sm font-semibold">Geben Sie zur Bestätigung "LÖSCHEN" ein.</label>
-                    <input type="text"
-                           class="text-sm rounded block w-full p-2.5  border border-black placeholder-gray-600 "
-                           id="recipient-name"
-                           placeholder="LÖSCHEN"
-                           required
-                           name="confirm">
-                    <p class="my-2 text-sm text-red2-500">
-                        {% if form.errors %}
-                            {% for field in form %}
-                                {% for error in field.errors %}{{ error|escape }}{% endfor %}
-                            {% endfor %}
-                            {% for error in form.non_field_errors %}{{ error|escape }}{% endfor %}
-                        {% endif %}
-                    </p>
+<div class="md:basis-9/12 basis-full rounded h-fit px-4">
+    {% include "partials/back_to_start.html" %}
+    <nav class="flex" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center rtl:space-x-reverse">
+            <li aria-current="page">
+                <a href="{% url 'settings' %}">
+                    <span class="font-semibold">Settings</span>
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                    {% include "icons/menu-right.html" %}
+                    <span class="font-semibold">Delete account</span>
                 </div>
-                <div class="space-y-2 mt-2">
-                    <a href="{% url 'settings' %}">
-                        <button type="button"
-                                class="focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 focus:ring-gray-600 border border-black">
-                            Abbrechen
-                        </button>
-                    </a>
-                    <button type="submit"
-                            class="focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 bg-red2-600 hover:bg-red2-500 focus:ring-red2-700 border border-black">
-                        Konto löschen
-                    </button>
-                </div>
-            </form>
+            </li>
+        </ol>
+    </nav>
+    <div class="mt-5">
+        <div class="rounded-t px-6 pt-5">
+            <div class="mb-1 font-semibold ">You are about to delete your account. This means:</div>
+            <ul class="space-y-1 pl-3 list-disc list-inside">
+                <li>You will be logged out.</li>
+                <li>Your account will be deactivated.</li>
+                <li>After three days your account will be irreversibly deleted.</li>
+            </ul>
         </div>
+        <form method="post" action="{% url 'delete_account' %}" class="space-y-4">
+            <div class="rounded-b px-6 pb-5 pt-3">
+                {% csrf_token %}
+                <label class="block mb-2 text-sm font-semibold">To confirm, type "DELETE".</label>
+                <input type="text" class="text-sm rounded block w-full p-2.5  border border-black placeholder-gray-600 "
+                    id="recipient-name" placeholder="DELETE" required name="confirm">
+                <p class="my-2 text-sm text-red2-500">
+                    {% if form.errors %}
+                    {% for field in form %}
+                    {% for error in field.errors %}{{ error|escape }}{% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}{{ error|escape }}{% endfor %}
+                    {% endif %}
+                </p>
+            </div>
+            <div class="space-y-2 mt-2">
+                <a href="{% url 'settings' %}">
+                    <button type="button"
+                        class="focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 focus:ring-gray-600 border border-black">
+                        Abort
+                    </button>
+                </a>
+                <button type="submit"
+                    class="focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 bg-red2-600 hover:bg-red2-500 focus:ring-red2-700 border border-black">
+                    Delete account
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 {% endblock content %}

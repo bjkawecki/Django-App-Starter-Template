@@ -27,11 +27,11 @@ class RegisterUserForm(SignupForm):
         max_length=30, label="E-Mail", required=True, show_hidden_initial="Email"
     )
     password1 = forms.CharField(
-        max_length=30, label="Passwort", required=True, widget=forms.PasswordInput
+        max_length=30, label="Password", required=True, widget=forms.PasswordInput
     )
     password2 = forms.CharField(
         max_length=30,
-        label="Passwort (wiederholen)",
+        label="Password (wiederholen)",
         required=True,
         widget=forms.PasswordInput,
     )

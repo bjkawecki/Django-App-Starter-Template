@@ -1,21 +1,22 @@
 {% extends "_base-landing.html" %}
 {% block title %}
-    404 – {{ app_name }}
+404 – {{ app_name }}
 {% endblock title %}
 {% block main %}
-    <section class="grid grid-cols-1 mx-auto pt-16">
-        <div class="flex flex-col text-center space-y-3 px-2">
-            <div>
-                <div class="font-extrabold md:text-9xl text-4xl tracking-wide">404</div>
-                <div class="font-medium md:text-xl text-lg">Die von Ihnen angeforderte Seite wurde nicht gefunden.</div>
-            </div>
-            <div>
-                <a href="{% url 'home' %}">
-                    <button class="w-fit focus:ring-4 focus:outline-none font-semibold rounded text-sm px-3 py-2.5 text-center border border-black">
-                        Zur Startseite
-                    </button>
-                </a>
-            </div>
+<section class="grid grid-cols-1 mx-auto pt-16">
+    <div class="flex flex-col text-center space-y-3 px-2">
+        <div>
+            <div class="font-extrabold md:text-9xl text-4xl tracking-wide">404</div>
+            <div class="font-medium md:text-xl text-lg">URL not found</div>
         </div>
-    </section>
+        <div>
+            <a href="{% url 'home' %}">
+                <button
+                    class="w-fit focus:ring-4 focus:outline-none font-semibold rounded text-sm px-3 py-2.5 text-center border border-black">
+                    Back to homepage
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
 {% endblock main %}

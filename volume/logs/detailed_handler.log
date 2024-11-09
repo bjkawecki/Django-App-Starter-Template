@@ -1,0 +1,3 @@
+INFO 2024-11-09 15:06:47,007 MainThread 125792771136384 autoreload autoreload.py 668                 django.utils.autoreload run_with_reloader 127 Watching for file changes with StatReloader
+INFO 2024-11-09 15:07:36,347 MainThread 125792771136384 autoreload autoreload.py 266                 django.utils.autoreload trigger_reload 127 /app/starter_app/admin/users.py changed, reloading.
+INFO 2024-11-09 15:07:40,718 MainThread 130203763018624 autoreload autoreload.py 668                 django.utils.autoreload run_with_reloader 129 Watching for file changes with StatReloader

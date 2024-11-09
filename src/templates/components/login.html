@@ -4,7 +4,7 @@
     <div class="col-span-1 md:flex md:flex-col w-full items-center px-3 lg:h-2/3 mt-5 md:mt-0 justify-self-start">
         <div class="rounded md:mt-3 sm:max-w-lg w-full xl:p-0 border border-black">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl">Anmelden</h1>
+                <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl">Sign-in</h1>
                 <form class="space-y-4 md:space-y-6" action="{% url 'signin' %}" method="post">
                     {% csrf_token %}
                     <div>
@@ -14,7 +14,7 @@
                             placeholder="beispiel@email.de" required="">
                     </div>
                     <div>
-                        <label for="id_password" class="block mb-2 text-sm font-semibold">Passwort</label>
+                        <label for="id_password" class="block mb-2 text-sm font-semibold">Password</label>
                         <input type="password" name="password" id="id_password" placeholder="••••••••"
                             class="sm:text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600"
                             required="">
@@ -27,15 +27,14 @@
                             {% endif %}
                         </p>
                     </div>
-                    <a href="{% url 'account_reset_password' %}" class="text-sm font-semibold underline ">Passwort
+                    <a href="{% url 'account_reset_password' %}" class="text-sm font-semibold underline ">Password
                         vergessen?</a>
                     <button type="submit"
                         class="w-full font-semibold focus:ring-4 focus:outline-nonefont-semibold rounded text-base px-3 py-2.5 text-center border border-black">
-                        Anmelden
+                        Sign-in
                     </button>
                     <p class="font-normal">
-                        Sie haben noch kein Konto? <a href="{% url 'signup' %}" class="font-medium underline">Hier
-                            registrieren</a>
+                        Don't have an account <a href="{% url 'signup' %}" class="font-medium underline">Register</a>
                     </p>
                 </form>
             </div>

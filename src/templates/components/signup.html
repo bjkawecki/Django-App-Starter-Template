@@ -1,60 +1,49 @@
 {% load static %}
-<section class="grid grid-cols-1 items-center md:h-full lg:h-[calc(90vh)] mx-auto lg:py-0 md:mt-20 mt-16 lg:mt-0 w-screen md:w-full overflow-x-hidden">
+<section
+    class="grid grid-cols-1 items-center md:h-full lg:h-[calc(90vh)] mx-auto lg:py-0 md:mt-20 mt-16 lg:mt-0 w-screen md:w-full overflow-x-hidden">
     <div class="col-span-1 md:flex md:flex-col w-full items-center px-3 lg:h-2/3 mt-5 md:mt-0 justify-self-start">
         <div class="rounded md:mt-3 sm:max-w-lg w-full xl:p-0 border border-black">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl">Konto erstellen</h1>
-                <form class="space-y-4 md:space-y-6"
-                      method="post"
-                      action="{% url 'signup' %}">
+                <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl">Register</h1>
+                <form class="space-y-4 md:space-y-6" method="post" action="{% url 'signup' %}">
                     {% csrf_token %}
                     <div>
-                        <label for="id_email" class="block mb-2 text-sm font-semibold">E-Mail-Adresse</label>
-                        <input type="email"
-                               name="email"
-                               id="id_email"
-                               class="sm:text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600 "
-                               placeholder="beispiel@mail.de"
-                               required="">
+                        <label for="id_email" class="block mb-2 text-sm font-semibold">E-mail adress</label>
+                        <input type="email" name="email" id="id_email"
+                            class="sm:text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600 "
+                            placeholder="beispiel@mail.de" required="">
                     </div>
                     <div>
-                        <label for="id_password1" class="block mb-2 text-sm font-semibold">Passwort</label>
-                        <input type="password"
-                               name="password1"
-                               id="id_password1"
-                               placeholder="••••••••"
-                               class="sm:text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600 "
-                               required="">
+                        <label for="id_password1" class="block mb-2 text-sm font-semibold">Password</label>
+                        <input type="password" name="password1" id="id_password1" placeholder="••••••••"
+                            class="sm:text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600 "
+                            required="">
                     </div>
                     <div>
-                        <label for="id_password2" class="block mb-2 text-sm font-semibold">Password bestätigen</label>
-                        <input type="password"
-                               name="password2"
-                               id="id_password2"
-                               placeholder="••••••••"
-                               class="sm:text-sm rounded  block w-full p-2.5 border border-black placeholder-gray-600 "
-                               required="">
+                        <label for="id_password2" class="block mb-2 text-sm font-semibold">Confirm password</label>
+                        <input type="password" name="password2" id="id_password2" placeholder="••••••••"
+                            class="sm:text-sm rounded  block w-full p-2.5 border border-black placeholder-gray-600 "
+                            required="">
                     </div>
                     <p class="my-2 text-sm text-red2-500">
                         {% if form.errors %}
-                            {% for field in form %}
-                                {% for error in field.errors %}{{ error|escape }}{% endfor %}
-                            {% endfor %}
-                            {% for error in form.non_field_errors %}{{ error|escape }}{% endfor %}
+                        {% for field in form %}
+                        {% for error in field.errors %}{{ error|escape }}{% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}{{ error|escape }}{% endfor %}
                         {% endif %}
                     </p>
                     <div class="text-sbase font-light">
-                        Beachten Sie unsere
-                        <a class="font-medium underline" href="#">allgemeinen Geschäftsbedingungen</a>, die
-                        <a class="font-medium underline" href="#">Datenschutzerklärung</a> und die
-                        <a class="font-medium underline" href="#">Widerrufsbelehrung</a>.
+                        Please note our
+                        <a class="font-medium underline" href="#">general terms and conditions,</a>, die
+                        <a class="font-medium underline" href="#">privacy policy</a> und die
+                        <a class="font-medium underline" href="#">revocation policy</a>.
                     </div>
                     <button type="submit"
-                            class="w-full focus:ring-4 focus:outline-none font-semibold rounded text-sm px-3 py-2.5 text-center border border-black">
-                        Konto erstellen
-                    </button>
+                        class="w-full focus:ring-4 focus:outline-none font-semibold rounded text-sm px-3 py-2.5 text-center border border-black">
+                        Register</button>
                     <p class="font-normal">
-                        Haben Sie bereits ein Konto? <a href="{% url 'signin' %}" class="font-medium underline">Hier anmelden</a>
+                        Already have an account? <a href="{% url 'signin' %}" class="font-medium underline">Sign-in</a>
                     </p>
                 </form>
             </div>

@@ -1,61 +1,55 @@
 {% extends "components/main.html" %}
 {% block title %}
-    Name ändern – {{ app_name }}
+Name ändern – {{ app_name }}
 {% endblock title %}
 {% block content %}
-    <div class="md:basis-9/12 basis-full rounded h-fit px-4">
-        {% include "partials/back_to_start.html" %}
-        <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center rtl:space-x-reverse">
-                <li aria-current="page">
-                    <a href="{% url 'settings' %}">
-                        <span class="font-semibold">Einstellungen</span>
-                    </a>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        {% include "icons/menu-right.html" %}
-                        <span class="font-semibold">Name ändern</span>
-                    </div>
-                </li>
-            </ol>
-        </nav>
-        <div class="mt-5">
-            <form method="post" action="{% url 'change_username' %}">
-                {% csrf_token %}
-                <div class="px-6 py-5 rounded">
-                    <div class="space-y-2 mb-4">
-                        <label for="id_first_name" class="block text-sm font-semibold">Vorname:</label>
-                        <input type="text"
-                               class="text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600 "
-                               name="first_name"
-                               value="{{ user.first_name }}"
-                               maxlength="150"
-                               id="id_first_name">
-                    </div>
-                    <div class="space-y-2 mb-1">
-                        <label for="id_last_name" class="block text-sm font-semibold">Nachname:</label>
-                        <input type="text"
-                               class="text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600"
-                               name="last_name"
-                               value="{{ user.last_name }}"
-                               maxlength="150"
-                               id="id_last_name">
-                    </div>
+<div class="md:basis-9/12 basis-full rounded h-fit px-4">
+    {% include "partials/back_to_start.html" %}
+    <nav class="flex" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center rtl:space-x-reverse">
+            <li aria-current="page">
+                <a href="{% url 'settings' %}">
+                    <span class="font-semibold">settings</span>
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                    {% include "icons/menu-right.html" %}
+                    <span class="font-semibold">Change username</span>
                 </div>
-                <div class="space-y-2 mt-2">
-                    <a href="{% url 'settings' %}">
-                        <button type="button"
-                                class="focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 focus:ring-gray-600 border border-black">
-                            Abbrechen
-                        </button>
-                    </a>
-                    <button type="submit"
-                            class="focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 focus:outline-none border border-black">
-                        Bestätigen
+            </li>
+        </ol>
+    </nav>
+    <div class="mt-5">
+        <form method="post" action="{% url 'change_username' %}">
+            {% csrf_token %}
+            <div class="px-6 py-5 rounded">
+                <div class="space-y-2 mb-4">
+                    <label for="id_first_name" class="block text-sm font-semibold">First name:</label>
+                    <input type="text"
+                        class="text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600 "
+                        name="first_name" value="{{ user.first_name }}" maxlength="150" id="id_first_name">
+                </div>
+                <div class="space-y-2 mb-1">
+                    <label for="id_last_name" class="block text-sm font-semibold">Family name:</label>
+                    <input type="text"
+                        class="text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600"
+                        name="last_name" value="{{ user.last_name }}" maxlength="150" id="id_last_name">
+                </div>
+            </div>
+            <div class="space-y-2 mt-2">
+                <a href="{% url 'settings' %}">
+                    <button type="button"
+                        class="focus:outline-none focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 mb-2 focus:ring-gray-600 border border-black">
+                        Abort
                     </button>
-                </div>
-            </form>
-        </div>
+                </a>
+                <button type="submit"
+                    class="focus:ring-4 font-semibold rounded text-sm px-3 py-2.5 me-2 focus:outline-none border border-black">
+                    Confirm
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 {% endblock content %}

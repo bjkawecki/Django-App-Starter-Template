@@ -15,5 +15,5 @@ class DeleteUserForm(forms.Form):
 
     def clean_confirm(self):
         confirm = self.cleaned_data.get("confirm")
-        if confirm != "LÖSCHEN":
+        if confirm != "DELETE":
             raise forms.ValidationError("Falsche Eingabe.")
