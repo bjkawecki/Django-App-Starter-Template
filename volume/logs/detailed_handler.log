@@ -17,3 +17,10 @@ INFO 2024-11-09 15:15:05,881 Thread-3 (process_request_thread) 130203588232896 b
 INFO 2024-11-09 15:15:06,986 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET / HTTP/1.1" 200 17630
 INFO 2024-11-09 15:15:07,569 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET / HTTP/1.1" 200 17630
 INFO 2024-11-09 15:15:21,580 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET / HTTP/1.1" 200 17631
+INFO 2024-11-09 15:18:28,887 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET / HTTP/1.1" 200 17631
+INFO 2024-11-09 15:18:30,220 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET /signup/ HTTP/1.1" 200 18312
+INFO 2024-11-09 15:18:32,615 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET /signin/ HTTP/1.1" 200 17636
+INFO 2024-11-09 15:18:33,812 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET /signup/ HTTP/1.1" 200 18312
+INFO 2024-11-09 15:18:34,995 Thread-3 (process_request_thread) 130203588232896 basehttp basehttp.py 213                 django.server log_message 129 "GET /signin/ HTTP/1.1" 200 17636
+INFO 2024-11-09 15:18:47,858 MainThread 130203763018624 autoreload autoreload.py 266                 django.utils.autoreload trigger_reload 129 /app/starter_app/forms/register.py changed, reloading.
+INFO 2024-11-09 15:18:52,505 MainThread 129521119185792 autoreload autoreload.py 668                 django.utils.autoreload run_with_reloader 135 Watching for file changes with StatReloader

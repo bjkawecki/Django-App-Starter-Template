@@ -13,7 +13,7 @@ class RegisterUserForm(SignupForm):
 
     def __init__(self, *args, **kwargs):
         super(RegisterUserForm, self).__init__(*args, **kwargs)
-        self.fields["email"].widget.attrs["placeholder"] = "beispiel@mail.de"
+        self.fields["email"].widget.attrs["placeholder"] = "example@mail.de"
         self.fields["password1"].widget.attrs["placeholder"] = "Mindestens 8 Zeichen"
         self.fields["password2"].widget.attrs["placeholder"] = "Erneut eingeben"
 
