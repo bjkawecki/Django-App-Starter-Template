@@ -1,6 +1,5 @@
 # A starter for your next Django web app
 
-
 ![Static Badge](https://img.shields.io/badge/Django-%23092E20?style=for-the-badge&logo=django&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Poetry-%2360A5FA?style=for-the-badge&logo=poetry&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
@@ -11,22 +10,21 @@
 ![Static Badge](https://img.shields.io/badge/Htmx-%233366CC?style=for-the-badge&logo=htmx&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=for-the-badge&logo=materialdesignicons&logoColor=white)
 
-
 This is some boilerplate code, that I pieced together for my latest Django project.
 
-Alongside a predefined development setup, you will find some helpful features to  get you started quickly for creating your next Django web application.
+Alongside a predefined development setup, you will find some helpful features to get you started quickly for creating your next Django web application.
 
 ## Prerequisites
 
 - Python 3.12
-- PostgreSQL 16.2
-- Docker 26.1
-- Docker Compose 2.27
-
+- PostgreSQL 16.3
+- Docker 27.3.1
+- Docker Compose 2.30.3
 
 ## Features
 
 ### Django
+
 - Allauth
 - Custom User Model
 - Split settings
@@ -36,36 +34,21 @@ Alongside a predefined development setup, you will find some helpful features to
 - Environment variables for secure configuration
 
 ### Client
+
 - Tailwind CSS with Flowbite
 - HTMX
 - Some templates with a predefined layout
 - A landing page
 
-### Convenience
+### Folder Structure
 
-Use the `Makefile` to shorten common and often used comands.
+Docker related files go to: **./docker**
 
-For example `poetry run python manage.py makemigrations` becomes `make mm`.
+Project, but not app related files go to: **./project**
 
-### Lint
-You can lint your files with pre-commit `poetry run pre-commit run --all-files`.
-First time will install the hooks from .pre-compose-config.yaml.
-Shortcut in Makefile: `make lint`
+App related files, e. g., code, go to: **./src**
 
-If you want to use `pre-commit` with `git`, you need to activate a virtual environment.
-
-First, create the virtual environment. On GNU/Linux you do this by
-
-`python -m venv .venv`
-
-and activate it by
-
-`source .venv/bin/activate`
-
-In the first run, pre-commit will update your projects files according to your configuration.
-
-For your django-templates files you can use djlint with `djlint . --reformat`
-
+Consistent files, e. g., logs and static files go to: **./volume**
 
 ## How to get started
 
@@ -87,14 +70,38 @@ Start the docker containers in the background:
 $ docker-compose -f docker-compose.dev.yaml up -d
 ```
 
-Update your Tailwind css file:
-
-```
-$ npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch
-```
-
 See your developtment server at `http://0.0.0.0:8000/`. You can hook into the django container:
 
 ```
 $ docker exec -it django_starter_web bash
 ```
+
+## Convenience
+
+Use `Makefile` to shorten common and often used comands.
+
+For example `poetry run python manage.py makemigrations` becomes `make mm`.
+
+Use the following command for automatically updating your tailwind-css:
+
+```
+$ npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch
+```
+
+### Linting
+
+You can lint your files with pre-commit `poetry run pre-commit run --all-files`.
+First time will install the hooks from .pre-compose-config.yaml.
+Shortcut in Makefile: `make lint`
+
+If you want to use `pre-commit` with `git`, create the virtual environment. On GNU/Linux you do this with
+
+`python -m venv .venv`
+
+and activate it with
+
+`source .venv/bin/activate`
+
+In the first run, pre-commit will update your projects files according to your configuration.
+
+For your django-templates files you can use djlint with `djlint . --reformat`

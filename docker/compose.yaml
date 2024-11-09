@@ -1,0 +1,93 @@
+name: django-app
+services:
+  web:
+    container_name: django_starter_web
+    restart: unless-stopped
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ../src:/app
+      - ../volume:/volume
+    ports:
+      - 8000:8000
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    env_file:
+      - ../project/.env
+
+  db:
+    container_name: django_starter_db
+    image: postgres:15.4-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgresql-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=django_starter_database
+
+  redis:
+    container_name: django_starter_redis
+    image: redis:7.2.3-alpine3.18
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+    env_file:
+      - ../project/.env
+
+  celery_worker:
+    restart: unless-stopped
+    container_name: django_starter_celery_worker
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: celery -A config.celery worker -l INFO
+    volumes:
+      - ../src:/app
+      - ../volume:/volume
+    depends_on:
+      web:
+        condition: service_started
+      redis:
+        condition: service_started
+      db:
+        condition: service_healthy
+    env_file:
+      - ../project/.env
+
+  celery_beat:
+    container_name: django_starter_celery_beat
+    restart: unless-stopped
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: celery -A config.celery beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    volumes:
+      - ../src:/app
+      - ../volume:/volume
+    depends_on:
+      web:
+        condition: service_started
+      redis:
+        condition: service_started
+      db:
+        condition: service_healthy
+    env_file:
+      - ../project/.env
+
+volumes:
+  postgresql-db:
+    driver: local

@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "flowbite": "^2.5.2",
+    "postcss-cli": "^11.0.0"
+  },
+  "name": "django-web-app-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
