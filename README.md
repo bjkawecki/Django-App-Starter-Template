@@ -61,7 +61,7 @@ Consistent files, e. g., logs and static files go to: **./volume**
 Build the docker containers:
 
 ```
-$ docker-compose -f docker-compose.dev.yaml build
+$ docker-compose -f docker/compose.yaml build
 ```
 
 Install the node modules:
@@ -73,13 +73,13 @@ $ npm install
 Start the docker containers in the background:
 
 ```
-$ docker-compose -f docker-compose.dev.yaml up -d
+$ docker-compose -f docker/compose.yaml up -d
 ```
 
-See your developtment server at `http://0.0.0.0:8000/`. You can hook into the django container:
+See your developtment server at `http://0.0.0.0:8000/`. Hook into the django container:
 
 ```
-$ docker exec -it django_starter_web bash
+$ docker container exec -it django_starter_web bash
 ```
 
 ## Convenience
