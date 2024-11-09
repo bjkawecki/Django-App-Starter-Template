@@ -40,7 +40,7 @@ Alongside a predefined development setup, you will find some helpful features to
 - Some templates with a predefined layout
 - A landing page
 
-### Folder Structure
+## Folder Structure
 
 Docker related files go to: **./docker**
 
