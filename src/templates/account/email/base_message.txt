@@ -1,8 +1,0 @@
-{% load i18n %}
-{% autoescape off %}
-Hallo!
-{% block content %}
-{% endblock content %}
-
-Ihr {{ app_name }}-Team
-{% endautoescape %}
