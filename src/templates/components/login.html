@@ -8,7 +8,7 @@
                 <form class="space-y-4 md:space-y-6" action="{% url 'signin' %}" method="post">
                     {% csrf_token %}
                     <div>
-                        <label for="id_login" class="block mb-2 text-sm font-semibold">E-mail adress</label>
+                        <label for="id_login" class="block mb-2 text-sm font-semibold">E-mail</label>
                         <input type="email" name="login" id="id_login"
                             class="sm:text-sm rounded block w-full p-2.5 border border-black placeholder-gray-600"
                             placeholder="beispiel@email.de" required="">
