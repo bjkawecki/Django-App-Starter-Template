@@ -2,7 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Django-092E20?style=style=flat-square&logo=django&logoColor=green)
 ![Static Badge](https://img.shields.io/badge/Docker-2CA5E0?style=style=flat-square&logo=docker&logoColor=white)
-![Static Badge](https://img.shields.io/badge/PostgreSQL-green?style=style=flat-square)
+![Static Badge](https://img.shields.io/badge/PostgreSQL-green?style=style=flat-square&logo=postgresql&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Celery-%2337814A?style=style=flat-square&logo=celery&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/redis-%23DD0031.svg?&style=style=flat-square&logo=redis&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=style=flat-square&logo=tailwind-css&logoColor=white)
