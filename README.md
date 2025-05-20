@@ -1,6 +1,6 @@
 # A starter for your next Django web app
 
-[![Static Badge](	https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
+[!Static Badge](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
 ![Static Badge](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/PostgreSQL-green?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/PostgreSQL-green?style=for-the-badge)
