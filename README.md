@@ -1,14 +1,13 @@
 # A starter for your next Django web app
 
-![Static Badge](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
-![Static Badge](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
-![Static Badge](https://img.shields.io/badge/PostgreSQL-green?style=for-the-badge)
-![Static Badge](https://img.shields.io/badge/PostgreSQL-green?style=for-the-badge)
-![Static Badge](https://img.shields.io/badge/Celery-%2337814A?style=for-the-badge&logo=celery&logoColor=white)
-![Static Badge](https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Static Badge](https://img.shields.io/badge/%3C/%3E%20htmx-3D72D7?style=for-the-badge&logo=mysl&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=for-the-badge&logo=materialdesignicons&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Django-092E20?style=style=flat-square&logo=django&logoColor=green)
+![Static Badge](https://img.shields.io/badge/Docker-2CA5E0?style=style=flat-square&logo=docker&logoColor=white)
+![Static Badge](https://img.shields.io/badge/PostgreSQL-green?style=style=flat-square)
+![Static Badge](https://img.shields.io/badge/Celery-%2337814A?style=style=flat-square&logo=celery&logoColor=white)
+![Static Badge](https://img.shields.io/badge/redis-%23DD0031.svg?&style=style=flat-square&logo=redis&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=style=flat-square&logo=tailwind-css&logoColor=white)
+![Static Badge](https://img.shields.io/badge/%3C/%3E%20htmx-3D72D7?style=style=flat-square&logo=mysl&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Material%20Design%20Icons-%232196F3?style=style=flat-square&logo=materialdesignicons&logoColor=white)
 
 This repository presents slimmed down boilerplate code from my latest Django project.
 
